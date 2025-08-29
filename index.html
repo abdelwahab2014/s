@@ -16,6 +16,35 @@
             --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             --transition: all 0.4s ease;
         }
+
+.horizontsl_image {
+      display: flex;
+      gap: 15px;
+      overflow-x: auto;         /* enables horizontal scroll */
+      padding: 10px;
+      scroll-snap-type: x mandatory; /* smooth snap scrolling */
+    }
+    .horizontsl_image img {
+      height: 200px;
+      border-radius: 8px;
+      flex-shrink: 0;           /* don’t shrink images */
+      object-fit: cover;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      scroll-snap-align: start;
+      transition: transform 0.2s;
+    }
+    .horizontsl_image img:hover {
+      transform: scale(1.05);
+    }
+    /* Hide scrollbar (optional) */
+    .horizontsl_image::-webkit-scrollbar {
+      display: none;
+    }
+    .horizontsl_image {
+      -ms-overflow-style: none;  /* IE/Edge */
+      scrollbar-width: none;     /* Firefox */
+    }
+/* end */
         
         * {
             margin: 0;
@@ -695,6 +724,16 @@
         
     </section>
 
+
+    <!-- gallery images-->
+<div class="horizontsl_image">
+      
+    <img src="9.png" alt="Image 1">
+</div>
+        <!-- gallery images-->
+
+
+    
     <section class="about" id="about">
         <div class="container">
             <h2 class="section-title">عن الشركة</h2>
