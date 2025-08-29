@@ -736,15 +736,12 @@
 
 
 
-    <form id="contactForm" action="https://formsubmit.co/data28448802@gmail.com" method="POST" class="contact-form">
-  <!-- FormSubmit options -->
+
+<form id="contactForm" action="https://formsubmit.co/data28448802@gmail.com" method="POST" class="contact-form">
   <input type="hidden" name="_subject" value="رسالة جديدة من موقع المحترف للسلامة">
   <input type="hidden" name="_captcha" value="false">
-
-  <!-- honeypot (anti-spam) -->
   <input type="text" name="_honey" style="display:none">
-<!-- redirect back to home section -->
-  <input type="hidden" name="_next" value="https://abdelwahab2014.github.io/s">
+
   <div class="form-group">
     <label for="name">الاسم</label>
     <input id="name" name="name" type="text" required>
@@ -766,36 +763,48 @@
 <!-- Popup -->
 <div id="thankYouPopup" style="
   display:none; position:fixed; top:0; left:0; width:100%; height:100%;
-  background:rgba(0,0,0,0.6); color:#fff; font-size:22px; text-align:center;
-  padding-top:20%; z-index:2000;">
-  ✅ شكراً لك، تم إرسال رسالتك بنجاح!
+  background:rgba(0,0,0,0.6); z-index:2000;
+  display:flex; align-items:center; justify-content:center;">
+  <div style="
+    background:#fff; color:#333; padding:30px 40px; border-radius:10px;
+    box-shadow:0 6px 15px rgba(0,0,0,.3); font-size:20px; text-align:center;">
+    ✅ شكراً لك! تم إرسال رسالتك بنجاح
+  </div>
 </div>
 
 <script>
-  document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault(); // stop normal redirect
+  const form = document.getElementById('contactForm');
+  const popup = document.getElementById('thankYouPopup');
 
-    // send with fetch (instead of default form redirect)
-    const formData = new FormData(this);
-    fetch(this.action, {
-      method: 'POST',
-      body: formData,
-    }).then(response => {
-      // show popup
-      document.getElementById('thankYouPopup').style.display = 'block';
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
 
-      // after 3 seconds redirect to #home
-      setTimeout(() => {
-        window.location.href = "#home";  // or "index.html#home" if needed
-      }, 3000);
-
-      this.reset();
-    }).catch(err => {
-      alert("❌ حدث خطأ أثناء الإرسال");
-      console.error(err);
-    });
+    const formData = new FormData(form);
+    fetch(form.action, { method: 'POST', body: formData })
+      .then(() => {
+        popup.style.display = 'flex';    // show popup
+        form.reset();
+        setTimeout(() => {
+          popup.style.display = 'none';
+          // go back to home section
+          window.location.hash = "home";
+        }, 3000); // 3 seconds
+      })
+      .catch(err => {
+        alert("❌ حدث خطأ أثناء الإرسال");
+        console.error(err);
+      });
   });
 </script>
+
+
+
+
+
+
+
+    
+
 
 
     <form action="https://formsubmit.co/data28448802@gmail.com" method="POST" class="contact-form">
@@ -848,21 +857,7 @@
       body: formData,
     }).then(response => {
       // show popup
-      document.getElementById('thankYouPopup').style.display = 'block';
-
-      // after 3 seconds redirect to #home
-      setTimeout(() => {
-        window.location.href = "#home";  // or "index.html#home" if needed
-      }, 3000);
-
-      this.reset();
-    }).catch(err => {
-      alert("❌ حدث خطأ أثناء الإرسال");
-      console.error(err);
-    });
-  });
-</script>
-    
+      
 
 
     
