@@ -735,11 +735,13 @@
 
 
     <form action="https://formsubmit.co/data28448802@gmail.com" method="POST" class="contact-form">
-  <!-- options -->
+  <!-- FormSubmit options -->
   <input type="hidden" name="_subject" value="رسالة جديدة من موقع المحترف للسلامة">
   <input type="hidden" name="_captcha" value="false">
-  <!-- redirect after success (اختياري) -->
-  <!-- <input type="hidden" name="_next" value="https://your-domain.com/thanks.html"> -->
+
+  <!-- redirect back to home section -->
+  <input type="hidden" name="_next" value="https://abdelwahab2014.github.io/s/">
+
   <!-- honeypot (anti-spam) -->
   <input type="text" name="_honey" style="display:none">
 
@@ -747,10 +749,12 @@
     <label for="name">الاسم</label>
     <input id="name" name="name" type="text" required>
   </div>
+
   <div class="form-group">
     <label for="email">البريد الإلكتروني</label>
     <input id="email" name="email" type="email" required>
   </div>
+
   <div class="form-group">
     <label for="message">الرسالة</label>
     <textarea id="message" name="message" rows="5" required></textarea>
