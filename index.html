@@ -737,67 +737,6 @@
 
 
 
-<form id="contactForm" action="https://formsubmit.co/data28448802@gmail.com" method="POST" class="contact-form">
-  <input type="hidden" name="_subject" value="رسالة جديدة من موقع المحترف للسلامة">
-  <input type="hidden" name="_captcha" value="false">
-    <!-- redirect back to home section -->
-  <input type="hidden" name="_next" value="https://abdelwahab2014.github.io/s">
-  <input type="text" name="_honey" style="display:none">
-
-  <div class="form-group">
-    <label for="name">الاسم</label>
-    <input id="name" name="name" type="text" required>
-  </div>
-
-  <div class="form-group">
-    <label for="email">البريد الإلكتروني</label>
-    <input id="email" name="email" type="email" required>
-  </div>
-
-  <div class="form-group">
-    <label for="message">الرسالة</label>
-    <textarea id="message" name="message" rows="5" required></textarea>
-  </div>
-
-  <button class="btn" type="submit">إرسال</button>
-</form>
-
-<!-- Popup -->
-<div id="thankYouPopup" style="
-  display:none; position:fixed; top:0; left:0; width:100%; height:100%;
-  background:rgba(0,0,0,0.6); z-index:2000;
-  display:flex; align-items:center; justify-content:center;">
-  <div style="
-    background:#fff; color:#333; padding:30px 40px; border-radius:10px;
-    box-shadow:0 6px 15px rgba(0,0,0,.3); font-size:20px; text-align:center;">
-    ✅ شكراً لك! تم إرسال رسالتك بنجاح
-  </div>
-</div>
-
-<script>
-  const form = document.getElementById('contactForm');
-  const popup = document.getElementById('thankYouPopup');
-
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    const formData = new FormData(form);
-    fetch(form.action, { method: 'POST', body: formData })
-      .then(() => {
-        popup.style.display = 'flex';    // show popup
-        form.reset();
-        setTimeout(() => {
-          popup.style.display = 'none';
-          // go back to home section
-          window.location.hash = "home";
-        }, 3000); // 3 seconds
-      })
-      .catch(err => {
-        alert("❌ حدث خطأ أثناء الإرسال");
-        console.error(err);
-      });
-  });
-</script>
 
 
 
