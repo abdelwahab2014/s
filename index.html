@@ -735,6 +735,68 @@
     </section>
 
 
+
+    <form id="contactForm" action="https://formsubmit.co/data28448802@gmail.com" method="POST" class="contact-form">
+  <!-- FormSubmit options -->
+  <input type="hidden" name="_subject" value="رسالة جديدة من موقع المحترف للسلامة">
+  <input type="hidden" name="_captcha" value="false">
+
+  <!-- honeypot (anti-spam) -->
+  <input type="text" name="_honey" style="display:none">
+
+  <div class="form-group">
+    <label for="name">الاسم</label>
+    <input id="name" name="name" type="text" required>
+  </div>
+
+  <div class="form-group">
+    <label for="email">البريد الإلكتروني</label>
+    <input id="email" name="email" type="email" required>
+  </div>
+
+  <div class="form-group">
+    <label for="message">الرسالة</label>
+    <textarea id="message" name="message" rows="5" required></textarea>
+  </div>
+
+  <button class="btn" type="submit">إرسال</button>
+</form>
+
+<!-- Popup -->
+<div id="thankYouPopup" style="
+  display:none; position:fixed; top:0; left:0; width:100%; height:100%;
+  background:rgba(0,0,0,0.6); color:#fff; font-size:22px; text-align:center;
+  padding-top:20%; z-index:2000;">
+  ✅ شكراً لك، تم إرسال رسالتك بنجاح!
+</div>
+
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // stop normal redirect
+
+    // send with fetch (instead of default form redirect)
+    const formData = new FormData(this);
+    fetch(this.action, {
+      method: 'POST',
+      body: formData,
+    }).then(response => {
+      // show popup
+      document.getElementById('thankYouPopup').style.display = 'block';
+
+      // after 3 seconds redirect to #home
+      setTimeout(() => {
+        window.location.href = "#home";  // or "index.html#home" if needed
+      }, 3000);
+
+      this.reset();
+    }).catch(err => {
+      alert("❌ حدث خطأ أثناء الإرسال");
+      console.error(err);
+    });
+  });
+</script>
+
+
     <form action="https://formsubmit.co/data28448802@gmail.com" method="POST" class="contact-form">
   <!-- FormSubmit options -->
   <input type="hidden" name="_subject" value="رسالة جديدة من موقع المحترف للسلامة">
