@@ -734,37 +734,31 @@
     </section>
 
 
-    
-    <section class="contact" id="contact">
-  <div class="container">
-    <h2 class="section-title">اتصل بنا</h2>
+    <form action="https://formsubmit.co/data28448802@gmail.com" method="POST" class="contact-form">
+  <!-- options -->
+  <input type="hidden" name="_subject" value="رسالة جديدة من موقع المحترف للسلامة">
+  <input type="hidden" name="_captcha" value="false">
+  <!-- redirect after success (اختياري) -->
+  <!-- <input type="hidden" name="_next" value="https://your-domain.com/thanks.html"> -->
+  <!-- honeypot (anti-spam) -->
+  <input type="text" name="_honey" style="display:none">
 
-    <form class="contact-form" id="contactForm" action="contact.php" method="GET" novalidate>
-      <!-- Honeypot (spam trap) -->
-      <input type="text" name="company" autocomplete="off" style="display:none">
-
-      <div class="form-group">
-        <label for="name">الاسم</label>
-        <input id="name" name="name" type="text" required minlength="2" maxlength="100" placeholder="اسمك الكامل">
-      </div>
-
-      <div class="form-group">
-        <label for="email">البريد الإلكتروني</label>
-        <input id="email" name="email" type="email" required maxlength="150" placeholder="your@email.com">
-      </div>
-
-      <div class="form-group">
-        <label for="message">رسالتك</label>
-        <textarea id="message" name="message" rows="6" required minlength="10" maxlength="4000" placeholder="كيف نقدر نساعدك؟"></textarea>
-      </div>
-
-      <button class="btn" type="submit">إرسال</button>
-
-      <!-- Status area -->
-      <p id="formStatus" style="margin-top:12px;text-align:center;"></p>
-    </form>
+  <div class="form-group">
+    <label for="name">الاسم</label>
+    <input id="name" name="name" type="text" required>
   </div>
-</section>
+  <div class="form-group">
+    <label for="email">البريد الإلكتروني</label>
+    <input id="email" name="email" type="email" required>
+  </div>
+  <div class="form-group">
+    <label for="message">الرسالة</label>
+    <textarea id="message" name="message" rows="5" required></textarea>
+  </div>
+
+  <button class="btn" type="submit">إرسال</button>
+    </form>
+     
     
 
     
